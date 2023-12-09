@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+        }
+
+        .circle {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            background-color: rgb(101, 234, 243);
+            position: relative;
+
+        }
+
+        .cl {
+
+            position: absolute;
+            width: 200px;
+            transform-origin: 100%;
+            top: 250px;
+            left: 50px;
+            background-color: black;
+            height: 5px;
+        }
+
+        .sec {
+            width: 210px;
+
+            width: 200px;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+        }
+
+        .hr {
+            width: 170px;
+            left: 100px;
+            width: 150px;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+        }
+
+        .min {
+            width: 200px;
+
+            width: 200px;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle">
+        <div class="sec cl"></div>
+        <div class="hr cl"></div>
+        <div class="min cl"></div>
+    </div>
+    <script>
+        const s = document.querySelector(".sec");
+        const h = document.querySelector(".hr");
+        const m = document.querySelector(".min");
+        function update() {
+
+            const now = new Date();
+            const min = now.getMinutes();
+            const hour = now.getHours();
+            const sec = now.getSeconds();
+            s.style.transform = `rotate(${((sec / 60) * 360) + 90}deg)`;
+            m.style.transform = `rotate(${((min / 60) * 360) + 90}deg)`;
+            h.style.transform = `rotate(${((hour / 12) * 360) + 90}deg)`
+            console.log(sec);
+        }
+        setInterval(update, 1000);
+    </script>
+</body>
+
+</html>
