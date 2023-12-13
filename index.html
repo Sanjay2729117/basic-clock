@@ -19,7 +19,16 @@
             position: relative;
 
         }
-
+        .circle span{
+            position: absolute;
+            transform: rotate(calc(30deg*var(--i)));
+            inset: 12px; 
+            text-align: center;
+        }
+.circle span b{
+    transform: rotate(calc(-30deg*var(--i)));
+    display: inline-block;
+}
         .cl {
 
             position: absolute;
@@ -59,6 +68,18 @@
 
 <body>
     <div class="circle">
+        <span style="--i:1"><b>1</b></span>
+        <span style="--i:2"><b>2</b></span>
+        <span style="--i:3"><b>3</b></span>
+        <span style="--i:4"><b>4</b></span>
+        <span style="--i:5"><b>5</b></span>
+        <span style="--i:6"><b>6</b></span>
+        <span style="--i:7"><b>7</b></span>
+        <span style="--i:8"><b>8</b></span>
+        <span style="--i:9"><b>9</b></span>
+        <span style="--i:10"><b>10</b></span>
+        <span style="--i:11"><b>11</b></span>
+        <span style="--i:12"><b>12</b></span>
         <div class="sec cl"></div>
         <div class="hr cl"></div>
         <div class="min cl"></div>
